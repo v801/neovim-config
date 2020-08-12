@@ -1,4 +1,4 @@
-# :sparkles: neovim for OSX :sparkles:
+# :sparkles: neovim for *nix/OSX :sparkles:
 
 #### clone repo
 `git clone git://github.com/v801/neovim-config.git ~/.nvim`
