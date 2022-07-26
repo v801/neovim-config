@@ -156,7 +156,7 @@ nnoremap <space>t :NERDTreeToggle<cr>
 " stop highlighting with Space + Space
 nnoremap <space><space> :noh<cr>
 
-" source .vimrc with Space + v
+" source .nvimrc with Space + v
 nnoremap <space>v :so $MYVIMRC<cr>
 
 " toggle MRU plugin with Space + m
