@@ -5,7 +5,6 @@
 
 ## move into ~/.nvim and run install script
 `cd ~/.nvim`  
-`chmod+ux install.sh`  
 `./install.sh`
 
 ## install plugins via vim-plug
