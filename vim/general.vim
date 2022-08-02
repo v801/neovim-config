@@ -1,31 +1,4 @@
 " -------------------------------------
-" COLORS / HIGHLIGHTS
-" -------------------------------------
-"
-set termguicolors
-
-" -------------------------------------
-" TABS / INDENTING
-" -------------------------------------
-
-" a tab is 2 spaces
-set tabstop=2
-
-" number of spaces used for auto indenting
-set shiftwidth=2
-
-" round indent to multiple of 'shiftwidth'
-set shiftround
-
-" convert tabs to spaces
-set expandtab
-
-" copy the previous indentation on autoindenting
-set copyindent
-
-set preserveindent
-
-" -------------------------------------
 " WINDOWS / BUFFERS
 " -------------------------------------
 
