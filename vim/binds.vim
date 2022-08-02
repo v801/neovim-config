@@ -21,13 +21,13 @@ nmap <space>l :set list!<CR>
 nnoremap <space>s :Git<CR>
 
 " toggle NVIM TREE window with Space + t
-nnoremap <space>t :NvimTreeFocus<cr>
+nnoremap <space>t :NeoTreeFloat<cr>
 
 " stop highlighting with Space + Space
 nnoremap <space><space> :noh<cr>
 
 " source .nvimrc with Space + v
-nnoremap <space>v :so $MYVIMRC<cr>
+nnoremap <space>v :so ~/.config/nvim/init.lua<cr>
 
 " toggle MRU plugin with Space + m
 nnoremap <space>m :MRU<cr>

@@ -6,12 +6,18 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.nvim/plugged')
 
 -- theme
-Plug 'marko-cerovac/material.nvim'
+Plug('folke/tokyonight.nvim', {branch = 'main'})
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
 -- util
-Plug 'kyazdani42/nvim-tree.lua'
+
+-- neo tree
+Plug ( 'nvim-neo-tree/neo-tree.nvim', {branch = 'v2.x'})
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+-- neo tree
+
 Plug 'yegappan/mru'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
@@ -34,28 +40,15 @@ vim.call('plug#end')
 ------------------
 -- plugin settings
 ------------------
-require('nvim-tree').setup()
 require('go').setup()
 
--- theme
-vim.g.material_style = 'deep ocean'
-
-require('material').setup({
-  contrast = {
-    sidebars = true,
-    non_current_windows = false,
-  },
-  lualine_style = 'stealth',
-  disable = {
-    borders = true,
-    eob_lines = true
-  }
+require("neo-tree").setup({
+  popup_border_style = "single",
 })
-
-vim.cmd 'colorscheme material'
 
 require('lualine').setup({
   options = {
+    theme = 'tokyonight',
     icons_enabled = false,
     component_separators = { left = ':', right = ':'},
     section_separators = { left = '', right = ''},
@@ -67,6 +60,15 @@ require('lualine').setup({
     lualine_a = {{'tabs', mode = 1}}
   }
 })
+
+-- theme
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_sidebars = { "neo-tree", "qf", "vista_kind", "terminal", "packer" }
+
+-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+vim.cmd 'colorscheme tokyonight'
+
 
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or "all"
