@@ -18,7 +18,7 @@ set pastetoggle=<F3>
 nmap <space>l :set list!<CR>
 
 " toggle git status with Space + s
-" nnoremap <space>s :Gstatus<CR>
+nnoremap <space>s :Git<CR>
 
 " toggle NVIM TREE window with Space + t
 nnoremap <space>t :NvimTreeFocus<cr>
