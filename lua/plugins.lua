@@ -39,15 +39,19 @@ require('go').setup()
 
 -- theme
 vim.g.material_style = 'deep ocean'
-vim.cmd 'colorscheme material'
 
 require('material').setup({
   contrast = {
     sidebars = true,
     non_current_windows = false,
   },
-  lualine_style = 'stealth'
+  lualine_style = 'stealth',
+  disable = {
+    eob_lines = true
+  }
 })
+
+vim.cmd 'colorscheme material'
 
 require('lualine').setup({
   options = {

@@ -15,6 +15,3 @@ opt.preserveindent  = true
 
 opt.tabstop    = 2 -- tab size, 2 spaces
 opt.shiftwidth = 2 -- # of spaces for indent width
-
--- hide squiggly lines
-opt.fillchars:append { eob = " " }
