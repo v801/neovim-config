@@ -20,8 +20,11 @@ nmap <space>l :set list!<CR>
 " toggle git status with Space + s
 nnoremap <space>s :Git<CR>
 
-" toggle NVIM TREE window with Space + t
-nnoremap <space>t :NeoTreeFloat<cr>
+" toggle neotree left window with Space + t
+nnoremap <space>t :NeoTreeFocus<cr>
+
+" toggle neotree float window with Space + n
+nnoremap <space>n :NeoTreeFloat<cr>
 
 " stop highlighting with Space + Space
 nnoremap <space><space> :noh<cr>
