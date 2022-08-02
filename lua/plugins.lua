@@ -47,6 +47,7 @@ require('material').setup({
   },
   lualine_style = 'stealth',
   disable = {
+    borders = true,
     eob_lines = true
   }
 })
