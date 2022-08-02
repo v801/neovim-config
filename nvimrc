@@ -1,3 +1,4 @@
+" CLASSIC CONFIG - MINIMAL REQS/PLUGINS
 " -------------------------------------
 " VIM PLUG / PACKAGE MANAGEMENT
 " -------------------------------------
@@ -15,24 +16,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'gregsexton/MatchTag'
 Plug 'Raimondi/delimitMate'
-Plug 'tudorprodan/html_annoyance.vim'
-Plug 'ap/vim-css-color'
 Plug 'tomtom/tcomment_vim'
-Plug 'ryanoasis/vim-devicons'
-
-" syntax
-Plug 'evanleck/vim-svelte', {'branch': 'main'}
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'vim-syntastic/syntastic'
-Plug 'posva/vim-vue'
-Plug 'elzr/vim-json'
-Plug 'wavded/vim-stylus'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'benbernard/vim-stylus'
-Plug 'othree/csscomplete.vim'
-Plug 'darrikonn/vim-gofmt'
 
 call plug#end()
 
@@ -45,10 +29,6 @@ set termguicolors
 " color scheme
 let ayucolor="dark"
 colorscheme ayu
-
-" colors auto complete popup
-highlight Pmenu      ctermbg=235   ctermfg=246
-highlight PmenuSel   ctermbg=233   ctermfg=2
 
 " -------------------------------------
 " TABS / INDENTING
@@ -144,12 +124,6 @@ set pastetoggle=<F3>
 " toggle list mode with Space + l
 nmap <space>l :set list!<CR>
 
-" toggle JS context coloring mode with Space + c
-" nmap <space>j :JSContextColorToggle<CR>
-
-" toggle git status with Space + s
-" nnoremap <space>s :Gstatus<CR>
-
 " toggle NERDTree window with Space + t
 nnoremap <space>t :NERDTreeToggle<cr>
 
@@ -195,7 +169,6 @@ nnoremap - <C-x>
 nnoremap <C-a> <NOP>
 nnoremap <C-x> <NOP>
 
-
 " -------------------------------------
 " OTHER
 " -------------------------------------
@@ -214,37 +187,17 @@ set backupdir=~/tmp
 set directory=~/tmp
 
 " -------------------------------------
-" VIM GIST PLUGIN
-" -------------------------------------
-
-" posts gists as private by default
-" let g:gist_post_private = 1
-
-" -------------------------------------
-" VIM JSON PLUGIN
-" -------------------------------------
-
-"  disable quote conceal
-let g:vim_json_syntax_conceal = 0
-
-" -------------------------------------
 " FILETYPES
 " -------------------------------------
 
 " launch plugins based on filetype
 filetype plugin on
 
-" enables snipmate css snippets in .scss (sass) files
-au BufRead,BufNewFile *.scss set ft=css.scss
-
 " set tab width to 2 in css/js files
 au BufRead,BufNewFile *.css,*.scss,*.styl,*.jade,*.js,*.ts,*.vue setlocal tabstop=2 sw=2 et
 
-" enables html syntax in vimperator edit forms
-au BufRead,BufNewFile vimperator-*.tmp set filetype=html
+" enables snipmate css snippets in .scss (sass) files
+au BufRead,BufNewFile *.scss set ft=css.scss
 
 " enables html/js/css syntax in vue files
 au BufRead,BufNewFile *.vue set filetype=html.js.css
-
-" enable js lib (jquery) syntax highlighting
-autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
