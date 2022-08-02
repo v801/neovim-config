@@ -6,7 +6,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.nvim/plugged')
 
 -- theme
-Plug('folke/tokyonight.nvim', {branch = 'main'})
+Plug 'Mofiqul/vscode.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
@@ -48,12 +48,12 @@ require("neo-tree").setup({
 
 require('lualine').setup({
   options = {
-    theme = 'tokyonight',
+    theme = 'vscode',
     icons_enabled = false,
     component_separators = { left = ':', right = ':'},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
-      'NvimTree'
+      'neo-tree'
     }
   },
   tabline = {
@@ -61,13 +61,10 @@ require('lualine').setup({
   }
 })
 
--- theme
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_sidebars = { "neo-tree", "qf", "vista_kind", "terminal", "packer" }
-
--- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
-vim.cmd 'colorscheme tokyonight'
+require('vscode').setup({
+	transparent = true,
+})
+vim.cmd 'colorscheme vscode'
 
 
 require('nvim-treesitter.configs').setup({
