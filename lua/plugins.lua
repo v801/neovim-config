@@ -54,6 +54,9 @@ require('lualine').setup({
     icons_enabled = false,
     component_separators = { left = ':', right = ':'},
     section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      'NvimTree'
+    }
   },
   tabline = {
     lualine_a = {{'tabs', mode = 1}}
