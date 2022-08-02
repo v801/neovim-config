@@ -38,7 +38,7 @@ require('nvim-tree').setup()
 require('go').setup()
 
 -- theme
-vim.g.material_style = "deep ocean"
+vim.g.material_style = 'deep ocean'
 vim.cmd 'colorscheme material'
 
 require('material').setup({
@@ -46,7 +46,7 @@ require('material').setup({
     sidebars = true,
     non_current_windows = false,
   },
-  lualine_style = "stealth"
+  lualine_style = 'stealth'
 })
 
 require('lualine').setup({
@@ -62,7 +62,7 @@ require('lualine').setup({
 
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or "all"
-  ensure_installed = { "go" },
+  ensure_installed = { 'go' },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -81,7 +81,7 @@ require('nvim-treesitter.configs').setup({
     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
     -- the name of the parser)
     -- list of language that will be disabled
-    disable = { "c", "rust" },
+    disable = { 'c', 'rust' },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
