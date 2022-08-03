@@ -13,7 +13,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 -- util
 
 -- neo tree
-Plug ( 'nvim-neo-tree/neo-tree.nvim', {branch = 'v2.x'})
+Plug ('nvim-neo-tree/neo-tree.nvim', {branch = 'v2.x'})
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
 -- neo tree
