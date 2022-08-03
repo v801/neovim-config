@@ -1,5 +1,11 @@
 # :sparkles: neovim for *nix :sparkles:
 
+Main repo contains a more 'bleeding edge' IDE setup with Lua configs.  Configured for running on a nightly Neovim build (v0.8.0-dev) compiled with treesitter.  
+
+Classic repo contains the older style vimscript config with much less plugins/IDE features.  Intended specifically for a lightweight config on stable version of neovim/vim.  Updates for this repo will be much less frequent.
+
+# Setup
+
 ## clone repo
 `git clone git@github.com:v801/neovim-config.git ~/.nvim`
 
