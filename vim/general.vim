@@ -75,7 +75,7 @@ filetype plugin on
 au BufRead,BufNewFile *.css,*.scss,*.styl,*.jade,*.js,*.ts,*.vue setlocal ts=2 sw=2 et
 
 " set tab width to 4 in go files, no expanding
-au BufRead,BufNewFile *.go setlocal noet ts=2 sw=4 sts=4
+au BufRead,BufNewFile *.go setlocal noet ts=4 sw=4
 
 " enables html syntax in vimperator edit forms
 au BufRead,BufNewFile vimperator-*.tmp set filetype=html
