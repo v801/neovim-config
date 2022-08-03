@@ -86,7 +86,7 @@ au BufRead,BufNewFile *.vue set filetype=html.js.css
 " -------------------------------------
 " GO.nvim 
 " -------------------------------------
-autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+" autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
 
 " -------------------------------------
 " COC.vim 
