@@ -23,11 +23,11 @@ write:
 quit:  
 `space + q`
 
-toggle list mode:  
-`space + l`
-
-toggle nerd tree:  
+toggle neo-tree left panel:  
 `space + t`
+
+toggle neo-tree float window:  
+`space + n`
 
 disable search highlight:  
 `space + space`
@@ -37,6 +37,9 @@ source .nvim config:
 
 toggle MRU:  
 `space + m`
+
+toggle list mode:  
+`space + l`
 
 remove all whitespace:  
 `space + -`
