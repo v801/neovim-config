@@ -72,7 +72,10 @@ let g:vim_markdown_folding_disabled = 1
 filetype plugin on
 
 " set tab width to 2 in css/js files
-au BufRead,BufNewFile *.css,*.scss,*.styl,*.jade,*.js,*.ts,*.vue setlocal tabstop=2 sw=2 et
+au BufRead,BufNewFile *.css,*.scss,*.styl,*.jade,*.js,*.ts,*.vue setlocal ts=2 sw=2 et
+
+" set tab width to 4 in go files, no expanding
+au BufRead,BufNewFile *.go setlocal noet ts=2 sw=4 sts=4
 
 " enables html syntax in vimperator edit forms
 au BufRead,BufNewFile vimperator-*.tmp set filetype=html
