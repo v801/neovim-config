@@ -74,9 +74,6 @@ filetype plugin on
 " set tab width to 2 in css/js files
 au BufRead,BufNewFile *.css,*.scss,*.styl,*.jade,*.js,*.ts,*.vue setlocal tabstop=2 sw=2 et
 
-" set tab width to 4 in go files
-" au BufRead,BufNewFile *.go setlocal tabstop=4 sw=4 et
-
 " enables html syntax in vimperator edit forms
 au BufRead,BufNewFile vimperator-*.tmp set filetype=html
 
@@ -91,10 +88,6 @@ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
 " -------------------------------------
 " COC.vim 
 " -------------------------------------
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
