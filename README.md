@@ -1,51 +1,64 @@
 # :sparkles: neovim for *nix :sparkles:
 
-Main repo contains a more 'bleeding edge' IDE setup with Lua configs.  Configured for running on a nightly Neovim build (v0.8.0-dev) compiled with treesitter.  
+Main branch contains a more 'bleeding edge' IDE setup with Lua configs.  Configured for running on a nightly Neovim build (v0.8.0-dev) compiled with treesitter.  
 
-Classic repo contains the older style vimscript config with much less plugins/IDE features.  Intended specifically for a lightweight config on stable version of neovim/vim.  Updates for this repo will be much less frequent.
+Classic branch contains the older style vimscript config with much less plugins/IDE features.  Intended specifically for a lightweight config on stable version of neovim/vim.  Updates for this branch will be much less frequent.
 
 # Setup
 
-## clone repo
+## Clone repo
 `git clone git@github.com:v801/neovim-config.git ~/.nvim`
 
-## move into ~/.nvim and run install script
+## Move into ~/.nvim and run installer
 `cd ~/.nvim`  
 `./install.sh`
 
-## install plugins via vim-plug
-run `nvim` then run `:PlugInstall`
+More info on installer [here](https://github.com/v801/neovim-config/blob/main/install.sh)
 
-hit `space + v` to reload the config
+## Install plugins via vim-plug
+If you haven't already, run `nvim` then run `:PlugInstall`
 
-## keybind cheatsheet
+Hit `space + v` to reload the config.
 
-move between windows:  
+# Keybind cheatsheet
+
+Move between windows:  
 `ctrl + h/j/k/l`
 
-write:  
+Write:  
 `space + w`
 
-quit:  
+Quit:  
 `space + q`
 
-toggle neo-tree left panel:  
+Toggle neo-tree left panel:  
 `space + t`
 
-toggle neo-tree float window:  
+Toggle neo-tree float window:  
 `space + n`
 
-disable search highlight:  
+Disable search highlight:  
 `space + space`
 
-source .nvim config:  
+Source .nvim config:  
 `space + v`
 
-toggle MRU:  
+Toggle MRU (Most Recently Used):  
 `space + m`
 
-toggle list mode:  
+Toggle list mode:  
 `space + l`
 
-remove all whitespace:  
+Remove all whitespace:  
 `space + -`
+
+# Current theme
+
+[vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
+
+# Plugins
+
+All plugins and their configs [here](https://github.com/v801/neovim-config/blob/main/lua/plugins.lua).
+
+# TODO
+Add info for simple neovim setup, both stable and nightly versions.
