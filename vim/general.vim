@@ -1,11 +1,4 @@
 " -------------------------------------
-" WINDOWS / BUFFERS
-" -------------------------------------
-
-" hide buffers instead of closing them
-set hidden
-
-" -------------------------------------
 " TEXT DISPLAY
 " -------------------------------------
 
@@ -34,9 +27,6 @@ set listchars+=precedes:❮
 " don't immediately highlight when sourcing
 nohlsearch
 
-" case insensitive search
-set ic
-
 " higlhight search
 set hls
 
@@ -46,9 +36,6 @@ set hls
 
 " ignore mouse completely
 set mouse=
-
-" hide normal mode indicator cos we use lightline
-set noshowmode
 
 " cds into files dir
 set autochdir
