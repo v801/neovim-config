@@ -12,11 +12,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 -- util
 
--- neo tree
-Plug ('nvim-neo-tree/neo-tree.nvim', {branch = 'v2.x'})
-Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-lua/plenary.nvim'
--- neo tree
+Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'yegappan/mru'
 Plug 'tomtom/tcomment_vim'
@@ -40,12 +36,30 @@ vim.call('plug#end')
 ------------------
 -- plugin settings
 ------------------
+
+-- go.nvim
 require('go').setup()
 
-require("neo-tree").setup({
-  popup_border_style = "single",
+-- nvim-tree
+require('nvim-tree').setup({
+  sort_by = 'case_sensitive',
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = 'u', action = 'dir_up' },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
 })
 
+-- lualine
 require('lualine').setup({
   options = {
     theme = 'vscode',
@@ -61,12 +75,13 @@ require('lualine').setup({
   }
 })
 
+-- theme: vscode
 require('vscode').setup({
 	transparent = true,
 })
 vim.cmd 'colorscheme vscode'
 
-
+-- treesitter
 require('nvim-treesitter.configs').setup({
   -- A list of parser names, or "all"
   ensure_installed = { 'go' },

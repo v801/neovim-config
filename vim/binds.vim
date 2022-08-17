@@ -18,13 +18,13 @@ set pastetoggle=<F3>
 nmap <space>l :set list!<CR>
 
 " toggle git status with Space + s
-nnoremap <space>s :Git<CR>
+nnoremap <space>s :Git<cr>
 
 " toggle neotree left window with Space + t
-nnoremap <space>t :NeoTreeFocus<cr>
+nnoremap <space>t :NvimTreeToggle<cr>
 
 " toggle neotree float window with Space + n
-nnoremap <space>n :NeoTreeFloat<cr>
+" nnoremap <space>n :Neotree float<cr>
 
 " stop highlighting with Space + Space
 nnoremap <space><space> :noh<cr>
