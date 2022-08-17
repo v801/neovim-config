@@ -1,32 +1,66 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
+# exit immediately on non-zero exit status
 set -e
 
-# create neovim directories
-echo '[*] Preparing Neovim config directory ...'
+# config paths
+nvimConfig=~/.config/nvim
+userConfig=~/.nvim
 
-if [ ! -d "~/.config/nvim" ]; then
-  mkdir -p ~/.config/nvim
-fi
+# check if config already exists and exit if true
+# to avoid writing over existing config
+checkNvimConfig() {
+  if [ -e ${nvimConfig} ]; then
+    printf "[!] Neovim config may already exist @ ${nvimConfig} ...\n"
+    printf "    Backup and remove ${nvimConfig} first ...\n"
+    exit 0
+  fi
+}
 
-# create symlinks
-echo '[*] Setting up symlinks ...'
+# check if user config repo is in correct path for symlinking
+# and exit if false
+checkUserConfig() {
+  if [ ! -e ${userConfig} ]; then
+    printf "[!] User config not found in ${userConfig} ...\n"
+    printf "    Clone to ${userConfig} before running this script ...\n"
+    exit 0
+  fi
+}
 
-if [ -e "~/.config/nvim/init.vim" ]; then
-  echo '[!] ~/.config/nvim/init.vim already exists ...'
-else
-  echo '[*] Symlinking config @ ~/.config/nvim/init.vim ...'
-  ln -s ~/.nvim/nvimrc ~/.config/nvim/init.vim
-fi
+# create symlink from user config to default neovim config path
+createSymlink() {
+  printf "[*] Creating symlink ...\n"
+  ln -s ${userConfig} ${nvimConfig}
+}
 
-# install vim-plug
-echo '[*] Installing vim-plug ...'
+# setup vim-plug
+# if vim-plug exists skip setup otherwise curl vim-plug script
+setupVimplug() {
+  vimplug=~/.local/share/nvim/site/autoload/plug.vim
+  if [ -e ${vimplug} ]; then
+    printf "[*] Vim-plug already exists @ ${vimplug} ...\n"
+    printf "    Skipping ...\n"
+  else
+    printf "[*] Installing vim-plug ...\n"
+    curl -fLo ${vimplug} --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  fi
+}
 
-if [ -e "~/.local/share/nvim/site/autoload/plug.vim" ]; then
-  echo '[!] ~/.local/share/nvim/site/autoload/plug.vim already exists ...'
-else
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
+# runs final install message
+doneMessage() {
+  printf "[+] Done!\n"
+  printf "[+] Open nvim and run :PlugInstall\n"
+}
 
-echo '[+] Done!'
+# main function
+main() {
+  checkNvimConfig
+  checkUserConfig
+  createSymlink
+  setupVimplug
+  doneMessage
+}
+
+# run main function
+main
