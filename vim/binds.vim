@@ -29,8 +29,8 @@ nnoremap <space>n :NeoTreeFloat<cr>
 " stop highlighting with Space + Space
 nnoremap <space><space> :noh<cr>
 
-" source .nvimrc with Space + v
-nnoremap <space>v :so ~/.config/nvim/init.lua<cr>
+" source nvim config with Space + v
+nnoremap <space>v :luafile $MYVIMRC<cr>
 
 " toggle MRU plugin with Space + m
 nnoremap <space>m :MRU<cr>
