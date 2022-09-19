@@ -60,5 +60,9 @@ Remove all whitespace:
 
 All plugins and their configs [here](https://github.com/v801/neovim-config/blob/main/lua/plugins.lua).
 
+Update plugins: `:PlugUpdate`  
+Update Treesitter: `:TSUpdate`
+
 # TODO
+Finish moving vimscript configs to lua.  
 Add info for simple neovim setup, both stable and nightly versions.
