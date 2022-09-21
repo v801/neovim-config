@@ -13,7 +13,7 @@ checkNvimConfig() {
   if [ -e ${nvimConfig} ]; then
     printf "[!] Neovim config may already exist @ ${nvimConfig} ...\n"
     printf "    Backup and remove ${nvimConfig} first ...\n"
-    exit 0
+    exit 1
   fi
 }
 
@@ -23,7 +23,7 @@ checkUserConfig() {
   if [ ! -e ${userConfig} ]; then
     printf "[!] User config not found in ${userConfig} ...\n"
     printf "    Clone to ${userConfig} before running this script ...\n"
-    exit 0
+    exit 1
   fi
 }
 
